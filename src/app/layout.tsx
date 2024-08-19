@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./navigation";
+import Header from "./header";
 import SessionProviderWrapper from "./SessionProviderWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -22,16 +23,11 @@ export default function RootLayout({
         <main className="bg-orange-100 flex min-h-screen flex-row min-w-96">
           <SessionProviderWrapper>
             <Navbar/>
-              <div className="w-full min-h-screen flex flex-col">
-                  <div className="bg-orange-400 shadow-lg h-16 w-full sticky top-0 z-40 flex">
-                      <div>
-                          
-                      </div>
-                  </div>
-                  {children}
-              </div>
+            <div className="w-full min-h-screen flex flex-col">
+                <Header/>
+                {children}
+            </div>
           </SessionProviderWrapper>
-
         </main>
       </body>
     </html>

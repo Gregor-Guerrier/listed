@@ -7,9 +7,7 @@ export const authOptions = {
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
-    // Add other providers here
   ],
-  // Add other NextAuth configurations here
 };
 
 const handler = NextAuth(authOptions);

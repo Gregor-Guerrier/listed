@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { useSession, signIn, signOut, SessionProvider } from "next-auth/react";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function Home() {
     const { data: session } = useSession();
@@ -26,7 +26,7 @@ export default function Home() {
                     <div className="w-full h-fit px-8 pb-4 flex flex-col">
                         <div className="flex pb-2">
                             <div>
-                                <p className="text-xl text-stone-600 text-left">Burgertown Retro</p>
+                                <p className="text-xl text-stone-600 text-left">{session.user?.email}</p>
                                 <p className="text-md text-orange-200 text-left">High Moon Studios</p>
                             </div>
                         </div>
